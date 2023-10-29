@@ -41,13 +41,14 @@ public class SearchPageTestsParameterized extends TestBase {
 
     static Stream<Arguments> popularSearchTestWithMethod(){
         return Stream.of(
-                Arguments.of(List.of("animals", "climate change", "space", "coronavirus", "oceans", "sharks", "vikings", "dinosaurs", "birds",
-                        "history", "volcano", "panda", "earthquakes", "science", "lions", "yellowstone", "deforestation"))
+                Arguments.of(List.of("animals", "climate change", "space", "coronavirus", "oceans", "sharks",
+                        "vikings", "dinosaurs", "birds", "history", "volcano", "panda", "earthquakes", "science",
+                        "lions", "yellowstone", "deforestation"))
         );
     }
 
     @Tag("search")
-    @MethodSource
+    @MethodSource("popularSearchTestWithMethod")
     @ParameterizedTest
     void popularSearchTestWithMethod(List<String> expectedPopularSearches){
         header.clickOnSearchIcon();
